@@ -6,11 +6,11 @@
 
 // Variables globales
 struct timeval ini, fin;
-
+//Tiempos iniciales
 void InicioMuestra(){
     gettimeofday(&ini, (void *)0);
 }
-
+//Tiempos finales
 void FinMuestra(){
     gettimeofday(&fin, (void *)0);
     fin.tv_usec -= ini.tv_usec;
@@ -18,14 +18,14 @@ void FinMuestra(){
     double tiempo = (double) (fin.tv_sec*1000000 + fin.tv_usec);
     printf("%9.0f \n", tiempo);
 }
-
+//Inicializa los valores de las matrices
 void iniMatriz(int n, double *m1, double *m2){
     for(int i=0; i<n*n; i++){
         m1[i] = i*2.3 + 1.3;
         m2[i] = i*2.3;
     }
 }
-
+//Las imprime en formato de matriz
 void imprMatrices(int n, double *matriz){
     if(n<9){
         printf("\n#######################################################\n");

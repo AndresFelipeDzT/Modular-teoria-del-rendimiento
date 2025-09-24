@@ -40,30 +40,30 @@
 
 
 double *mA, *mB, *mC;
-
+//Revisa que le pasen los argumentos
 int main(int argc, char *argv[]) {
     if(argc<=2){
         printf("Numero argumentos incorrectos\n");
         printf("\n\t $ejecutable.exe DIM \n");
         return -1;
     }
-
+//Que los argumentos queden en entero
     int N = (int) atof(argv[1]);
     if(N<=0){
         printf("\n Valores deben ser mayor que cero\n");
         return -1;
     };
-//Se reserva de manera dinamica la memoria para la matrz
+//Se reserva de manera dinamica la memoria para las matrices
     mA = (double *) malloc(N*N*sizeof(double));
     mB = (double *) malloc(N*N*sizeof(double));
     mC = (double *) calloc(N*N,sizeof(double));
 
 	/** Se inicializan las 2 matrices **/
 	iniMatriz(N, mA, mB);
-
+	//Para imprimir las dos que se multiplican
 	imprMatrices(N, mA);
 	imprMatrices(N, mB);
-
+	//Se multiplican
      for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
             double sumaTemp, *pA, *pB;
@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
             mC[j+i*N] = sumaTemp;
         }
     }
-
+//Se imprime el resultado
 	imprMatrices(N, mB);
 //Se libra la memoria, regresando recursos al sistema y previniendo un overhead
         printf("\n\tFin del programa.............!\n");
