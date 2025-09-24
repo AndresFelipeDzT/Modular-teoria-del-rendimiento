@@ -36,6 +36,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include "modulo.h"
+
 
 double *mA, *mB, *mC;
 
@@ -62,7 +64,7 @@ int main(int argc, char *argv[]) {
 	imprMatrices(N, mA);
 	imprMatrices(N, mB);
 
-     for(int i=0; i<0; i++){
+     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
             double sumaTemp, *pA, *pB;
             sumaTemp = 0.0;

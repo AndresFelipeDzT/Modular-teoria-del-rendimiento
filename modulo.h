@@ -8,6 +8,6 @@ void FinMuestra();
 
 void iniMatriz(int n, double *m1, double *m2);
 
-void imprMatrices(int n, double *matriz)();
+void imprMatrices(int n, double *matriz);
 
 #endif
